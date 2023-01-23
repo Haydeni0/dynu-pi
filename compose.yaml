@@ -1,0 +1,6 @@
+
+services:
+  dynu-update-client:
+    build: .
+    env_file:
+      - config.env
