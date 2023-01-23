@@ -1,0 +1,1 @@
+*/30 * * * * /dynu.sh >> /var/log/dynu.log
