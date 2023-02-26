@@ -1,15 +1,15 @@
 FROM ubuntu:20.04
 
-RUN apt update
-RUN apt -y install cron
-RUN apt -y install curl
-RUN apt -y install nano
+RUN apt-get update
+RUN apt-get -y install cron
+RUN apt-get -y install curl
+RUN apt-get -y install nano
 
 COPY crontab.txt /crontab.txt
 COPY ./dynu.sh /dynu.sh
 
 RUN chmod 700 /dynu.sh
 
-RUN /usr/bin/crontab /crontab.txt
+RUN crontab /crontab.txt
 
-CMD ["/usr/sbin/cron", "-f"]
+CMD ["cron", "-f"]
