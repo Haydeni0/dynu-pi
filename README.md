@@ -8,4 +8,4 @@ Run the setup script to set your [dynu](https://www.dynu.com/en-US/) username an
 
 Run docker compose to build and run the container
 
-    docker compose up -d
+    docker compose up -d --build

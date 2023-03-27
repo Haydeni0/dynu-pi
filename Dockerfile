@@ -6,10 +6,13 @@ RUN apt-get -y install curl
 RUN apt-get -y install nano
 
 COPY crontab.txt /crontab.txt
-COPY ./dynu.sh /dynu.sh
 
+COPY ./dynu.sh /dynu.sh
 RUN chmod 700 /dynu.sh
+
+COPY ./entrypoint.sh /entrypoint.sh
+RUN chmod 700 /entrypoint.sh
 
 RUN crontab /crontab.txt
 
-CMD ["cron", "-f"]
+CMD ["/entrypoint.sh"]
